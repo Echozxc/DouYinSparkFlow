@@ -35,6 +35,8 @@ async def scroll_and_select_user(page, username, targets):
     await page.locator(first_friend_selector).click()  # 点击第一个好友，确保列表激活
     
     logger.debug(f"账号 {username} 已激活好友列表，开始滚动查找目标好友")
+    
+    await asyncio.sleep(2)  # 等待好友列表加载
 
     found_usernames = set()  # 存储找到的用户名
 
