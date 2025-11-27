@@ -1,9 +1,12 @@
 import asyncio
 from playwright.async_api import async_playwright
 import json
+import os
 import traceback
 import requests
-from setup_config import getBrowerExecutablePath, HEADLESS, multiTask, taskCount, hitokotoApi, messageTemplate
+from setup_config import getBrowerExecutablePath, multiTask, taskCount, hitokotoApi, messageTemplate
+
+HEADLESS = os.getenv("HEADLESS", "false").lower() == "true"
 
 complates = {}
 

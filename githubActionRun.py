@@ -1,8 +1,8 @@
 import json, asyncio, os
 from doTasks import runTasks
-from setup_config import HEADLESS
 
-HEADLESS=True  # 确保在 GitHub Actions 中以无头模式运行
+# 设置 HEADLESS 环境变量为 True
+os.environ["HEADLESS"] = "true"
 
 # 加载配置和用户数据
 user_data_json = os.getenv("USER_DATA", None)
