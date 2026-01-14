@@ -2,7 +2,7 @@
   "multiTask": true,
   "taskCount": 5,
   "proxyAddress": "",
-  "messageTemplate": "[续火花吧]今日火花[续火花吧]\n—— [右边] 每日一言 [左边] ——\n[API]",
+  "messageTemplate": "[续火花吧]续火花\n— [右边] 每日一言 [左边] —\n[API]",
   "hitokotoTypes": [
     "动画",
     "漫画",
