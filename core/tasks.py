@@ -214,7 +214,6 @@ def do_user_task(browser, username, cookies, targets):
             message = build_message()
             for line in message.split("\\n"):
                 chat_input.type(line)  # 输入每一行
-                print(f"账号 {username} 输入消息行: {line}")
                 # 如果不是最后一行，模拟 Shift+Enter 插入换行
                 if line != message.split("\\n")[-1]:
                     chat_input.press("Shift+Enter")  # 模拟 Shift+Enter 插入换行
@@ -235,7 +234,8 @@ def runTasks():
     try:
         # 检查是否启用多任务和任务数量
         # 创建信号量以限制并发任务数量
-        logger.info("开始执行任务,当前配置如下：")
+        logger.info("开始执行任务")
+        logger.debug(f"当前配置如下：")
         logger.debug(f"消息模板: {config.get('messageTemplate', '未找到消息模板')}")
         logger.debug(f"一言类型: {config['hitokotoTypes']}")
         for user in userData:
@@ -246,8 +246,10 @@ def runTasks():
             targets = user["targets"]
             complates[user["unique_id"]] = []  # 初始化该用户的已完成列表
             username = user.get("username", "未知用户")
+            logger.info(f"开始处理账号 {username}")
             # 创建任务
             do_user_task(browser, username, cookies, targets)
+            logger.info(f"账号 {username} 任务完成")
     finally:
         # 关闭浏览器实例
         browser.close()

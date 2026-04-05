@@ -30,7 +30,7 @@
 
 ### 1. 获取配置信息
 
-访问 [DouYinSparkFlow 配置生成器]() 按照提示填写配置信息
+访问 [DouYinSparkFlow 配置生成器](https://oilu.cn/DouYinSparkFlow) 按照提示填写配置信息
 
 > cookies的获取需要借助于[Cookie-Editor](https://cookie-editor.com/)浏览器扩展，根据自己浏览器环境安装此浏览器扩展
 
